@@ -17,17 +17,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       statusDiv.textContent = 'Validation PASSED! ✅';
     } else {
       statusDiv.textContent = 'Validation FAILED! ❌';
-
-      // Add an "Explain Error" button
-      const explainButton = document.createElement('button');
-      explainButton.textContent = 'Explain Error with AI';
-      explainButton.style.marginTop = '10px';
-      explainButton.style.display = 'block';
-      resultDiv.appendChild(explainButton);
-
-      explainButton.addEventListener('click', function () {
-        explainErrorWithAI(request.html);
-      });
     }
   }
 });
