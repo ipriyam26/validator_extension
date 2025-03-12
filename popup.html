@@ -1,0 +1,71 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notebook Validator</title>
+    <style>
+      body {
+        width: 450px;
+        max-height: 600px;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      #result {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .loading {
+        text-align: center;
+        padding: 20px;
+      }
+      .ai-response {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-left: 4px solid #4285f4;
+      }
+      .explanation {
+        line-height: 1.5;
+      }
+      button {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      button:hover {
+        background-color: #3367d6;
+      }
+      .api-key-form {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      #api-key {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Notebook Validator</h2>
+    <div id="status">Click the button to validate the current notebook</div>
+
+    
+
+    <button id="validate">Validate Notebook</button>
+    <div id="result">
+      <div class="loading" style="display: none">Validating notebook...</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

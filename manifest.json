@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Notebook Validator",
+  "version": "1.0",
+  "description": "Validates notebooks on labeling-mi.turing.com",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://labeling-mi.turing.com/*",
+    "https://mistral-validator.turing.com/*",
+    "https://api.openai.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.labeling-mi.turing.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.js"
+      ],
+      "matches": [
+        "*://*.labeling-mi.turing.com/*"
+      ]
+    }
+  ]
+}
